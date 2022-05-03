@@ -1,3 +1,4 @@
+package com.rogeriotakashi.examples.interfaces;
 
 public interface ExampleFunctionalInterface {
 
