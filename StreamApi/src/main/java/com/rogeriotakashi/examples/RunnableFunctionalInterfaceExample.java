@@ -21,6 +21,7 @@ public class RunnableFunctionalInterfaceExample {
 //        };
 
         // 3 - Java 8: Using lambda expressions and @FunctionalInterface
+        // lambda expression = funções anonimas
         Runnable runnable = () -> System.out.println("Hello from Runnable");
 
         Thread thread = new Thread(runnable);
@@ -29,3 +30,4 @@ public class RunnableFunctionalInterfaceExample {
         System.out.println("Seguindo o fluxo");
     }
 }
+
