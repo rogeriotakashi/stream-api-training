@@ -15,9 +15,6 @@ public class StreamSpoilerExample {
                                          .filter(nome -> nome.equals("Rogerio"))
                                          .collect(Collectors.toList());
 
-        lista.forEach();
-
-
         System.out.println(nomeFiltrado);
 
     }
