@@ -8,7 +8,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -36,7 +35,7 @@ class ConsumerExampleTest {
 
     @Test
     public void filtrarSexoMasculino() {
-        List<Pessoa> result = null;
+        List<Pessoa> result = null; // Colete o resultado dentro dessa variavel ou renomei ela
 
         // Implementar solução
 
@@ -47,13 +46,34 @@ class ConsumerExampleTest {
 
     @Test
     public void filtrarIdadeMaiorQue60() {
-        List<Pessoa> result = null;
+        List<Pessoa> result = null; // Colete o resultado dentro dessa variavel ou renomei ela
 
         // Implementar solução
 
         assertThat(result)
                 .extracting(Pessoa::getNome)
                 .containsExactly("Joaquim", "Dona Benta");
+    }
+
+    @Test
+    public void mapearTodasIdades() {
+        // Lista de idades das pessoas
+        List<Integer> result = null;
+
+        // Implementar solução
+
+        assertThat(result).contains(25, 18, 35, 19, 40, 10, 85, 90, 16, 23, 43);
+    }
+
+
+    @Test
+    public void filtrarPeloNomeRenatoEFazerUppercaseDoNome() {
+        // Nota: Lista contendo somente o nome Renato em uppercase
+        List<String> result = null;
+
+        // Implementar solução
+
+        assertThat(result).containsOnly("RENATO");
     }
 
 
