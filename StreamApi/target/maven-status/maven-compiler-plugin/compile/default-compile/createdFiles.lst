@@ -1,0 +1,12 @@
+com/rogeriotakashi/examples/ConsumidorExample.class
+com/rogeriotakashi/examples/vo/Pessoa.class
+com/rogeriotakashi/examples/RunnableFunctionalInterfaceExample.class
+com/rogeriotakashi/examples/interfaces/ConsumidorString.class
+com/rogeriotakashi/examples/FunctionExample.class
+com/rogeriotakashi/examples/interfaces/RunnableImplementation.class
+com/rogeriotakashi/examples/SupplierExample.class
+com/rogeriotakashi/examples/PredicateExample.class
+com/rogeriotakashi/examples/StreamSpoilerExample.class
+com/rogeriotakashi/examples/ConsumerExample.class
+com/rogeriotakashi/examples/interfaces/ExampleFunctionalInterface.class
+com/rogeriotakashi/examples/interfaces/Consumidor.class

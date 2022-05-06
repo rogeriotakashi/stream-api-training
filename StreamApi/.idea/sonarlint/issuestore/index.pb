@@ -14,5 +14,9 @@ p
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+o
+?src/main/java/com/rogeriotakashi/examples/PredicateExample.java,5/5/55706328be5e49b2798ee3dc15da86bef5f9556a
+n
+>src/main/java/com/rogeriotakashi/examples/SupplierExample.java,5/0/5018560e8cabd88cb91cdf68c569892da4b13b68
+Å
+Qsrc/main/java/com/rogeriotakashi/examples/RunnableFunctionalInterfaceExample.java,b/4/b4c888aeaec80c8aa995552899fd7785e662be48

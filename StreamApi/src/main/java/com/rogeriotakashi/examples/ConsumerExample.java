@@ -1,12 +1,8 @@
 package com.rogeriotakashi.examples;
 
-import com.rogeriotakashi.examples.interfaces.Consumidor;
-import com.rogeriotakashi.examples.interfaces.ConsumidorString;
 import com.rogeriotakashi.examples.vo.Pessoa;
 
 import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
 
 public class ConsumerExample {
 
