@@ -20,3 +20,13 @@ n
 >src/main/java/com/rogeriotakashi/examples/SupplierExample.java,5/0/5018560e8cabd88cb91cdf68c569892da4b13b68
 Å
 Qsrc/main/java/com/rogeriotakashi/examples/RunnableFunctionalInterfaceExample.java,b/4/b4c888aeaec80c8aa995552899fd7785e662be48
+l
+<src/main/java/com/rogeriotakashi/examples/StreamExample.java,4/8/481868ca4b8371cc97bfd4a21a1c1751c189eaae
+s
+Csrc/main/java/com/rogeriotakashi/examples/StreamSpoilerExample.java,1/4/14860b26bc7b47c377095d4ba4622322006ed371
+r
+Bsrc/test/java/com/rogeriotakashi/examples/ConsumerExampleTest.java,d/4/d4333d64cb1109bec10630b18400b5d050dfe26d
+o
+?src/main/java/com/rogeriotakashi/examples/OptionalExample2.java,8/2/82035a9e18823dce161b4b10bfd7becaf8a2d6c3
+n
+>src/main/java/com/rogeriotakashi/examples/OptionalExample.java,3/7/378d02c38c3ed8936cb75b4f832c09fcb599f039
