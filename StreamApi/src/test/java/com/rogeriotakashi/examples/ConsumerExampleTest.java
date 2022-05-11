@@ -6,8 +6,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,7 +29,7 @@ class ConsumerExampleTest {
                 new Pessoa("Roberto",40, 'M', true),
                 new Pessoa("Renato",10, 'M', false),
                 new Pessoa("Joaquim",85, 'M', false),
-                new Pessoa("Dona Benta",90, 'F', true),
+                new Pessoa("Dona Benta",90, 'F', false),
                 new Pessoa("George",16, 'M', false),
                 new Pessoa("Jessica",23, 'F', false),
                 new Pessoa("Elon Musk",43, 'M', true)
@@ -35,13 +38,66 @@ class ConsumerExampleTest {
 
     @Test
     public void filtrarSexoMasculino() {
-        List<Pessoa> result = null; // Colete o resultado dentro dessa variavel ou renomei ela
-
+//        List<Pessoa> result = null; // Colete o resultado dentro dessa variavel ou renomei ela
         // Implementar solução
 
-        assertThat(result)
+
+
+        // Estilo imperativo
+        // Mutavel
+        List<Pessoa> result = new ArrayList<>(); // Acumulador
+        for(int i = 0; i < pessoas.size(); i++) {
+            if(pessoas.get(i).getSexo() == 'M') {
+                result.add(pessoas.get(i));
+            }
+        }
+
+        // Estilo Funcional
+        // Lazy Evaluation
+        // Imutavel vs Mutavel
+        List<Pessoa> result2 = pessoas.stream()
+                                      .filter(pessoa -> pessoa.getSexo() == 'M')
+                                      .collect(Collectors.toList());
+
+        assertThat(result2)
                 .extracting(Pessoa::getNome)
                 .containsExactly("Rogerio", "Gabriel","Jose", "Roberto", "Renato", "Joaquim", "George", "Elon Musk");
+    }
+
+    @Test
+    public void filtrarIdadeMaiorQue60EIndicarQueEhEspecial() {
+        List<Pessoa> result = null; // Colete o resultado dentro dessa variavel ou renomei ela
+
+        // Pratica Ruim
+//        pessoas.stream() // Imutavel
+//               .filter(pessoa -> pessoa.getIdade() > 60) // Imutavel
+//               .forEach(pessoa -> result.add(pessoa)); // Mutavel (Usando acumulador)
+
+        // Pratica Ruim
+        List<Pessoa> resultado = pessoas.stream() // Imutavel
+                                        .filter(pessoa -> pessoa.getIdade() > 60)
+                                        .map(pessoa -> {
+                                            pessoa.setEspecial(true); // Mutavel
+                                            return pessoa;
+                                        })
+                                        .collect(Collectors.toList()); // Imutavel
+
+
+        // Se a gente precisar adicionar em uma lista, o ideal seria usar for (estilo imperativo)
+        for(Pessoa p : pessoas){
+            if(p.getIdade() > 60){
+                p.setEspecial(true);
+                result.add(p);
+            }
+        }
+
+        // Lista -> stream() [Iniciando Operação] -> Operação Intermediarias -> Termino (retornando uma lista)
+
+        System.out.println(pessoas);
+
+//        assertThat(result)
+//                .extracting(Pessoa::getNome)
+//                .containsExactly("Joaquim", "Dona Benta");
     }
 
     @Test
@@ -70,6 +126,8 @@ class ConsumerExampleTest {
     public void filtrarPeloNomeRenatoEFazerUppercaseDoNome() {
         // Nota: Lista contendo somente o nome Renato em uppercase
         List<String> result = null;
+
+
 
         // Implementar solução
 
