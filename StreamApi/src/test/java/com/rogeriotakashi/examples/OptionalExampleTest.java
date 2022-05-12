@@ -7,6 +7,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,21 +15,21 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class OptionalExampleTest {
 
     @Test
-    public void getOrderTypeWithoutUsingIfConditionals() {
+    public void getPriceWithoutUsingIfConditionals() {
         Optional<Order> orderOptional = getOrder(true); // do not change
 
-        String result = null; // answer here
+        Double price = null;
 
-        assertThat(result).isEqualTo("Pix");
+        assertThat(price).isEqualTo(10.0);
     }
 
     @Test
-    public void getDefaultOrderTypeWithoutUsingIfConditionals() {
+    public void getDefaultPrice5WhenOptionalEmptyWithoutUsingIfConditionals() {
         Optional<Order> orderOptional = getOrder(false); // do not change
 
-        String result = null; // answer here
+        Double price = null; // answer here
 
-        assertThat(result).isEqualTo("Default");
+        assertThat(price).isEqualTo(5.0);
     }
 
     @Test
@@ -49,15 +50,18 @@ public class OptionalExampleTest {
         // Find any letter 'N' in the list
         // use .stream() and the methods .filter with .findAny() to find (or not) the 'N'
 
-        Optional<String> letterNOptional = null; // Solution here
+        Predicate<String> predicate = null;// Solution here
+        Optional<String> letterNOptional = listWithN.stream()
+                                                    .filter(predicate)
+                                                    .findAny();
 
-        
+
         assertThat(letterNOptional.get()).isEqualTo("N");
     }
 
     private Optional<Order> getOrder(boolean shouldGetOrder){
         if(shouldGetOrder) {
-            return Optional.of(new Order(new OrderType("Pix")));
+            return Optional.of(new Order(new OrderType("Pix"), 10.0));
         }
         return Optional.empty();
     }
@@ -67,13 +71,19 @@ public class OptionalExampleTest {
 
 class Order{
     OrderType orderType;
+    Double price;
 
-    public Order(final OrderType orderType) {
+    public Order(final OrderType orderType, final Double price) {
         this.orderType = orderType;
+        this.price = price;
     }
 
     public OrderType getOrderType() {
         return orderType;
+    }
+
+    public Double getPrice() {
+        return price;
     }
 }
 

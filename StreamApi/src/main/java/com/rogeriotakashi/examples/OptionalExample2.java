@@ -97,8 +97,3 @@ class Localizacao2 {
                 '}';
     }
 }
-// JPA
-interface teste {
-
-    Optional<Entidade> findById(int id);
-}
